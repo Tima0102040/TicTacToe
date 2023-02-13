@@ -1,13 +1,13 @@
 import pygame
 import sys
 
-
-
 def check_win (mas, sign) :
     for row in mas:
         if row.count (sign) == 3:
             return sign
-
+    for col in range (3):
+        if mas [0][col]==sign and mas [1][col==sign and mas [2][col]== sign :
+            return sign
 
 
 pygame.init()
