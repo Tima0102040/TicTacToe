@@ -1,6 +1,15 @@
 import pygame
 import sys
 
+
+
+def check_win (mas, sign) :
+    for row in mas:
+        if row.count (sign) == 3:
+            return sign
+
+
+
 pygame.init()
 size_block=100
 margin=15
