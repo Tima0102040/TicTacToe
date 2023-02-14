@@ -16,3 +16,16 @@ green=(0,255,0)
 white=(255,255,255)
 arr=[[0]*3 for i in range (3)]
 query=0
+
+while True:
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            pygame.quit()
+            sys.exit(0)
+
+    for row in range(3):
+        for col in range(3):
+            x = col * size_block + (col + 1) * margin
+            y = row * size_block + (row + 1) * margin
+            pygame.draw.rect(screen, white, (x, y, size_block, size_block))
+    pygame.display.update()
