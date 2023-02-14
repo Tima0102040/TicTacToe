@@ -67,4 +67,19 @@ while True:
                 pygame.draw.line(screen, white, (x + size_block - 5, y + 5), (x + 5, y + size_block - 5), 3)
             elif color == green:
                 pygame.draw.circle(screen, white, (x + size_block // 2, y + size_block // 2), size_block // 2 - 3, 3)
+
+    if (query-1) %2 == 0 : #x
+        game_over = check_win(arr, 'x')
+    else:
+        game_over =check_win(arr, 'o')
+
+    if game_over:
+        screen.fill(black)
+        font = pygame.font.SysFont('stxingkai',80)
+        text1 = font.render(game_over, True, white)
+        text_rect = text1.get_rect()
+        text_x = screen.get_width() / 2 - text_rect.width / 2
+        text_y = screen.get_height() / 2 - text_rect.height / 2
+        screen.blit(text1,[text_x,text_y])
+
     pygame.display.update()
