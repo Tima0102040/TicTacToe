@@ -26,12 +26,18 @@ while True:
             x_mouse, y_mouse=pygame.mouse.get_pos()
             col=x_mouse//(size_block+margin)
             row=y_mouse//(size_block+margin)
-            arr[row][col]='x'
+            if query % 2 == 0:
+                arr[row][col] = 'x'
+            else:
+                arr[row][col] = 'o'
+            query += 1
 
     for row in range(3):
         for col in range(3):
             if arr[row][col]=='x':
                 color=red
+            elif arr[row][col]=='o':
+                color=green
             else:
                 color=white
             x = col * size_block + (col + 1) * margin
