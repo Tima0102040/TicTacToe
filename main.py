@@ -51,6 +51,11 @@ while True:
                 else:
                     arr[row][col] = 'o'
                 query += 1
+        elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            game_over = False
+            arr = [[0] * 3 for i in range(3)]
+            query=0
+            screen.fill (black)
     if not game_over:
         for row in range(3):
             for col in range(3):
