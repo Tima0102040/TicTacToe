@@ -22,10 +22,19 @@ while True:
         if event.type==pygame.QUIT:
             pygame.quit()
             sys.exit(0)
+        elif event.type==pygame.MOUSEBUTTONDOWN:
+            x_mouse, y_mouse=pygame.mouse.get_pos()
+            col=x_mouse//(size_block+margin)
+            row=y_mouse//(size_block+margin)
+            arr[row][col]='x'
 
     for row in range(3):
         for col in range(3):
+            if arr[row][col]=='x':
+                color=red
+            else:
+                color=white
             x = col * size_block + (col + 1) * margin
             y = row * size_block + (row + 1) * margin
-            pygame.draw.rect(screen, white, (x, y, size_block, size_block))
+            pygame.draw.rect(screen, color, (x, y, size_block, size_block))
     pygame.display.update()
