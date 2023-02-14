@@ -44,4 +44,9 @@ while True:
             x = col * size_block + (col + 1) * margin
             y = row * size_block + (row + 1) * margin
             pygame.draw.rect(screen, color, (x, y, size_block, size_block))
+            if color == red:
+                pygame.draw.line(screen, white, (x + 5, y + 5), (x + size_block - 5, y + size_block - 5), 3)
+                pygame.draw.line(screen, white, (x + size_block - 5, y + 5), (x + 5, y + size_block - 5), 3)
+            elif color == green:
+                pygame.draw.circle(screen, white, (x + size_block // 2, y + size_block // 2), size_block // 2 - 3, 3)
     pygame.display.update()
