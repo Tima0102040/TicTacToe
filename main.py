@@ -26,11 +26,12 @@ while True:
             x_mouse, y_mouse=pygame.mouse.get_pos()
             col=x_mouse//(size_block+margin)
             row=y_mouse//(size_block+margin)
-            if query % 2 == 0:
-                arr[row][col] = 'x'
-            else:
-                arr[row][col] = 'o'
-            query += 1
+            if arr[row][col] == 0:
+                if query % 2 == 0:
+                    arr[row][col] = 'x'
+                else:
+                    arr[row][col] = 'o'
+                query += 1
 
     for row in range(3):
         for col in range(3):
